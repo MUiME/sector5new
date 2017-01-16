@@ -1,0 +1,25 @@
+.writemsg-tool-list{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    margin: 0 -15px;
+    padding: 0px;
+    line-height: 40px;
+}
+.writemsg-tool-list > .writemsg-tool-listitem{
+    position:relative; display:inline-block;
+    white-space: nowrap;
+    color: lightskyblue;
+}
+.writemsg-tool-list > .writemsg-tool-listitem.disabled{
+    opacity: 0.4;
+}
+.writemsg-tool-list > .writemsg-tool-listitem > a{
+    color: lightskyblue;
+    text-decoration: none;
+}
