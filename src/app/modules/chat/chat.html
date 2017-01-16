@@ -1,0 +1,287 @@
+<div class="demo" chat-module>
+<!--
+  <div class="static">
+    <div class="static__text">Pull white sidebar to the right</div>
+  </div>
+-->
+  <div class="sidebar-content">
+    <div class="searchfrn">
+      <img src="http://i.imgur.com/t8TeL1S.png" alt="" class="searchfrn__img" />
+      <input type="text" class="searchfrn__input" placeholder="Search Friends" />
+    </div>
+
+	  <div class="contact-group">
+
+			<div class="contact" chat-rid="r1">
+			  <img src="http://i.imgur.com/ae5r9VA.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Kevin Spacey</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r1')" ng-hide="chat.getNumNotify('r1') == 0"></span>
+			</div>
+			<div class="contact" chat-rid="r2">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Rosamund Pike</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r2')" ng-hide="chat.getNumNotify('r2') == 0"></span>
+			</div>
+			<div class="contact" chat-rid="r3">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Eva Green</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r3')" ng-hide="chat.getNumNotify('r3') == 0"></span>
+			</div>
+			<div class="contact" chat-rid="r4">
+			  <img src="http://i.imgur.com/ae5r9VA.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Paul Newman</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r4')" ng-hide="chat.getNumNotify('r4') == 0"></span>
+			</div>
+			<div class="contact" chat-rid="r5">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r5')" ng-hide="chat.getNumNotify('r5') == 0"></span>
+			</div>
+<!--
+			  <div class="contact" chat-rid="r6">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r6')" ng-hide="chat.getNumNotify('r6') == 0"></span>
+			</div>
+			  <div class="contact" chat-rid="r7">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r7')" ng-hide="chat.getNumNotify('r7') == 0"></span>
+			</div>
+			  <div class="contact" chat-rid="r8">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r8')" ng-hide="chat.getNumNotify('r8') == 0"></span>
+			</div>
+			  <div class="contact" chat-rid="r9">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r9')" ng-hide="chat.getNumNotify('r9') == 0"></span>
+			</div>
+			  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+		  <div class="contact" chat-rid="r10">
+			  <img src="http://i.imgur.com/tnMJGyT.png" alt="" class="contact__photo online" />
+			  <span class="contact__name">Thomas Break</span>
+			  <span class="contact__status"></span>
+			  <span class="contact__notify" ng-bind="chat.getNumNotify('r10')" ng-hide="chat.getNumNotify('r10') == 0"></span>
+			</div>
+-->
+
+	  </div>
+	  <div class="shadow-a"></div>
+
+
+	 <div class="history">
+		 <img src="/images/history.png" class="history__photo" />
+	 </div>
+<!--
+	  <div class="historyNotify">
+	  </div>
+-->
+  </div>
+
+
+  <div class="conversation" ng-if="chat.convState">
+    <div align="center" class="conversation__icon">
+		<img ng-src="{{chat.currentIcon}}" alt="" class="online" />
+	</div>
+    <img src="/images/cancel.png" class="conversation__close" chat-conversation-close/>
+	<img src="/images/mute.png" class="conversation__mute" chat-conversation-mute/>
+    <div align="center" class="conversation__person">
+<!--      <span class="conversation__online active"></span>-->
+      <span class="conversation__name" ng-bind="chat.currentName"></span>
+
+
+    </div>
+
+    <div id="chatConvMsgs" class="conversation__messages">
+<!--
+      <div class="conversation__msgRow">
+        <div class="conversation__message notMine">Such SVG, much Javascript, very CSS!</div>
+      </div>
+      <div class="conversation__msgRow">
+        <div class="conversation__message mine">Wow!</div>
+      </div>
+      <div class="conversation__msgRow">
+        <div class="conversation__message mine">Very elastic! Such easings!</div>
+      </div>
+      <div class="conversation__msgRow">
+        <div class="conversation__message notMine">
+          Check out my other <a href="http://codepen.io/suez/public/" target="_blank">pens</a>
+        </div>
+      </div>
+-->
+      <div class="conversation__msgRow" ng-repeat="cm in chat.currentMessages | orderBy:origDt">
+        <div ng-if="cm.type == 'text'" class="conversation__message {{chat.isSender(cm.username)? 'mine': 'notMine'}}">{{cm.text}}</div>
+        <div ng-if="cm.type == 'image'" class="conversation__image {{chat.isSender(cm.username)? 'mine': 'notMine'}}"><img ng-src="{{cm.content}}" chat-conversation-image-content /></div>
+        <div ng-if="cm.type == 'file'" class="conversation__file {{chat.isSender(cm.username)? 'mine': 'notMine'}}" >
+            <a class="file-content">
+                <div class="file-icon"><img ng-src="{{chat.getIconFile(cm.fileName)}}"></div>
+                <div class="file-name">{{cm.fileName}}</div>
+                <div class="file-size">{{chat.formatCapacityFile(cm.fileSize)}}</div>
+            </a>
+        </div>
+      </div>
+    </div>
+	<div class="shadow-b"></div>
+
+    <div class="conversation__dropZone" ng-show="chat.isConvDropZoneShow">
+        <div class="conversation__dropContainer">
+            <div class="conversation__droppable" ng-class="{hover: chat.isConvDroppableHover}" chat-conversation-droppable></div>
+        </div>
+    </div>
+
+	  <div class="shadow-c"></div>
+	  <div class="conversation__inbox">
+		  <textarea type="text" id="chatConvInput" class="conversation__input" placeholder="Your message" ng-model="chat.newMsg" chat-conversation-input></textarea>
+
+		  <div class="conversation__tool">
+			  <div class="conversation__table">
+				  <div class="conversation__row">
+					  <div class="conversation__cell1">
+						  <div align="center" class="conversation__padpic">
+							<img class="conversation__pic" src="/images/smiling.png" chat-conversation-tool="emo"/><br>
+							  <span class="conversation__spanmenu" aling="center">Emotion</span>
+
+						  </div>
+					  </div>
+					  <div class="conversation__cell2">
+						  <div align="center" class="conversation__padpic">
+							  <img class="conversation__pic" src="/images/attachment.png" chat-conversation-tool="sendfile"/><br>
+							  <span class="conversation__spanmenu" aling="center">Send File</span>
+						  </div>
+					  </div>
+					  <div class="conversation__cell2">
+						  <div align="center" class="conversation__padpic">
+							  <img class="conversation__pic" src="/images/photo-camera.png" chat-conversation-tool="takephoto" /><br>
+							  <span class="conversation__spanmenu" aling="center">Take Photo</span>
+						  </div>
+					  </div>
+					  <div class="conversation__cell2">
+						  <div align="center" class="conversation__padpic">
+							   <img class="conversation__pic" src="/images/mobile-phone.png" chat-conversation-tool="call"/><br>
+							  <span class="conversation__spanmenu" aling="center">Call</span>
+						  </div>
+					  </div>
+					  <div class="conversation__cell2">
+						  <div align="center" class="conversation__padpic">
+							   <img class="conversation__pic" src="/images/video-camera.png" chat-conversation-tool="videocall"/><br>
+							  <span class="conversation__spanmenu" aling="center">Video Call</span>
+						  </div>
+					  </div>
+				  </div>
+				  <div class="conversation__row">
+					  <div class="conversation__cell3">
+						  <div align="center" class="conversation__padpic">
+							   <img class="conversation__pic" src="/images/joinchat.png" chat-conversation-tool="joinchat"/><br>
+							  <span class="conversation__spanmenu" aling="center">Join Chat</span>
+						  </div>
+					  </div>
+					  <div class="conversation__cell4">
+						  <div align="center" class="conversation__padpic">
+							   <img class="conversation__pic" src="/images/map-location.png" chat-conversation-tool="location"/><br>
+							  <span class="conversation__spanmenu" aling="center">Location</span>
+						  </div>
+					  </div>
+					  <div class="conversation__cell4">
+						  <div align="center" class="conversation__padpic">
+							   <img class="conversation__pic" src="/images/newpage.png" chat-conversation-tool="newpage"/><br>
+							  <span class="conversation__spanmenu" aling="center">MutiChat</span>
+						  </div>
+					  </div>
+					  <div class="conversation__cell4">
+						  <div align="center" class="conversation__padpic">
+							   <img class="conversation__pic" src="/images/settings.png" chat-conversation-tool="setting"/><br>
+							  <span class="conversation__spanmenu" aling="center">Settings</span>
+						  </div>
+					  </div>
+					  <div class="conversation__cell4">
+						  <div align="center" class="conversation__padpic">
+							   <img class="conversation__pic" src="/images/block.png" chat-conversation-tool="block"/><br>
+							  <span class="conversation__spanmenu" aling="center">Block</span>
+						  </div>
+					  </div>
+				  </div>
+
+
+			  </div>
+
+
+		  </div>
+          <div id="chatConvBrowseFiles" class="conversation__browsefiles"></div>
+<!--	  	<input type="text" class="conversation__input" placeholder="Your message" ng-model="newChatMsg" chat-conversation-input />-->
+	  </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
