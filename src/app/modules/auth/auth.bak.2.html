@@ -1,0 +1,225 @@
+<div align="center" class="auth visible-sm visible-xs hidden-md hidden-lg">
+    <div class="container">
+        <div class="auth-header">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#" class="active" id="login-form-link">Sign In!</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="#" id="register-form-link">Sign Up!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="auth-body">
+            <div id="login-form" style="display: block; position:relative; height: 100%; min-height: 314px;">
+                <div class="signin">
+                    <div class="card">
+                        <div class="passport">
+                            <div class="background"></div>
+                            <span class="text">PASSPORT</span>
+                        </div>
+                        <form name="signinForm1" role="form" method="post" ng-submit="auth.signin()" novalidate>
+                            <input formuser class="user" type="text" placeholder="name@example.com" ng-model="auth.user.username" required />
+                            <div ng-class="{ 'notifyerr': auth.error.signin }">
+                                <span ng-show="auth.error.signin">USER OR PASSWORD INCORRECT</span>
+                            </div>
+                            <input formpasswd class="passwd" type="password" placeholder="password" ng-model="auth.user.password" required />
+                            <a href="#" class="forgotpw">FORGOT PASSWORD</a>
+                            <button type="submit" formsubmit class="submit" ng-disabled="signinForm1.$invalid">SIGN IN</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="register-form" style="display: none; position:relative; height: 100%; min-height: 479px;">
+                <div class="signup">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+                        <div align="left" style="color:slategray">
+<!--                                <div style="font-size:20pt; font-weight:bold; text-align:center;">SIGN UP</div>-->
+                            <form name="signupForm1" role="form" method="post" ng-submit="auth.signup()" novalidate>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 50%;" ng-class="{ 'err': (signupForm1.firstname.$dirty && signupForm1.firstname.$invalid) || (signupForm2.firstname.$dirty && signupForm2.firstname.$invalid) }">
+                                        <input forminput field="fname" group-field="name" type="text" placeholder="First Name" name="firstname" ng-model="auth.user.firstname" ng-model-options="{ updateOn: 'blur' }" required />
+                                    </div>
+                                    <div class="signup-input-block" style="width: 50%;" ng-class="{ 'err': (signupForm1.lastname.$dirty && signupForm1.lastname.$invalid) || (signupForm2.lastname.$dirty && signupForm2.lastname.$invalid) }">
+                                        <input forminput field="lname" group-field="name" type="text" placeholder="Last Name" name="lastname" ng-model="auth.user.lastname" ng-model-options="{ updateOn: 'blur' }" required />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+<!--
+                                    <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.email.$dirty && (signupForm1.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername()))) || (signupForm2.email.$dirty && (signupForm2.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername()))) }">
+                                        <input forminput field="email" type="text" placeholder="name@example.com" name="email" ng-model="auth.user.email" ng-model-options="{ updateOn: 'blur' }" required />
+                                    </div>
+-->
+
+
+                                    <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.email.$timedout && (signupForm1.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername()))) || (signupForm2.email.$timedout && (signupForm2.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername()))) }">
+                                        <input forminput field="email" type="text" placeholder="name@example.com" name="email" ng-model="auth.user.email" required val-on-timeout typing-limit="2000" />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.password1.$dirty && (signupForm1.password1.$invalid || auth.isLessLengthPassword1())) || (signupForm2.password1.$dirty && (signupForm2.password1.$invalid || auth.isLessLengthPassword1())) }">
+                                        <input forminput field="passwd" type="password" placeholder="password at least 6 characters" name="password1" ng-model="auth.user.password1" ng-model-options="{ updateOn: 'blur' }" required />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.password2.$dirty && (signupForm1.password2.$invalid || auth.isLessLengthPassword2() || (auth.user.password1 && auth.isPasswordNotMatch()))) || (signupForm2.password2.$dirty && (signupForm2.password2.$invalid || auth.isLessLengthPassword2() || (auth.user.password1 && auth.isPasswordNotMatch()))) }">
+                                        <input forminput field="repasswd" type="password" placeholder="re-password" name="password2"  ng-model="auth.user.password2" ng-model-options="{ updateOn: 'blur' }" required />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 100%;"><span>Birthday</span></div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 25%;">
+                                        <select forminput field="byear" group-field="birthday" class="init" ng-model="auth.user.byear" ng-model-options="{ updateOn: 'blur' }">
+                                            <option value="" selected>Year</option>
+                                            <option ng-repeat="byear in auth.arrByears" value="{{ byear }}">{{ byear }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="signup-input-block" style="width: 25%;">
+                                         <select forminput field="bmonth" group-field="birthday" class="init" ng-model="auth.user.bmonth" ng-model-options="{ updateOn: 'blur' }">
+                                            <option value="" selected>Month</option>
+                                            <option ng-repeat="bmonth in auth.arrBmonths" value="{{ bmonth.value }}">{{ bmonth.text }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="signup-input-block" style="width: 25%;">
+                                        <select forminput field="bday" group-field="birthday" class="init" ng-model="auth.user.bday" ng-model-options="{ updateOn: 'blur' }">
+                                            <option value="" selected>Day</option>
+                                            <option ng-repeat="bday in auth.arrBdays" value="{{ bday.value }}">{{ bday.text }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="signup-input-block" style="width: 25%;" ng-class="{ 'err': (signupForm1.gender.$dirty && signupForm1.gender.$invalid) || (signupForm2.gender.$dirty && signupForm2.gender.$invalid) }">
+                                        <select forminput field="gender" class="init" name="gender" ng-model="auth.user.gender" ng-model-options="{ updateOn: 'blur' }" required>
+                                            <option value="" selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div align="center" class="signup-agreement">
+                                    <div>By Clicking "SIGN UP" below, you are agreeing to the</div>
+                                    <div><a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></div>
+                                </div>
+                                <div class="signup-submit">
+                                    <button type="submit" formsubmit ng-disabled="signupForm1.$invalid">SIGN UP</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div align="center" class="auth hidden-xs hidden-sm">
+    <div class="container">
+<!--
+        <div class="col-md-1 fullheight"></div>
+        <div class="col-md-10 fullheight">
+-->
+
+<!--        <div class="col-md-4 fullheight">-->
+            <div class="signin">
+                <div class="card">
+                    <div class="passport">
+                        <div class="background"></div>
+                        <span class="text">PASSPORT</span>
+                    </div>
+                    <form name="signinForm2" role="form" method="post" ng-submit="auth.signin()" novalidate>
+                        <input formuser class="user" type="text" placeholder="name@example.com" ng-model="auth.user.username" required />
+                        <div ng-class="{ 'notifyerr': auth.error.signin }">
+                            <span ng-show="auth.error.signin">USER OR PASSWORD INCORRECT</span>
+                        </div>
+                        <input formpasswd class="passwd" type="password" placeholder="password" ng-model="auth.user.password" required />
+                        <a href="#" class="forgotpw">FORGOT PASSWORD</a>
+                        <button type="submit" formsubmit class="submit" ng-disabled="signinForm2.$invalid">SIGN IN</button>
+                    </form>
+                </div>
+            </div>
+<!--        </div>-->
+<!--        <div class="col-md-2 fullheight"></div>-->
+<!--        <div class="col-md-4 fullheight">-->
+            <div class="signup">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">
+                    <div align="left" style="color:slategray">
+                        <div style="font-size:20pt; font-weight:bold; text-align:center;">SIGN UP</div>
+                        <form name="signupForm2" role="form" method="post" ng-submit="auth.signup()" novalidate style="margin: 0 2%">
+                            <div class="signup-input-group">
+                                <div class="signup-input-block" style="width: 50%;" ng-class="{ 'err': (signupForm1.firstname.$dirty && signupForm1.firstname.$invalid) || (signupForm2.firstname.$dirty && signupForm2.firstname.$invalid) }">
+                                    <input forminput field="fname" group-field="name" type="text" placeholder="First Name" name="firstname" ng-model="auth.user.firstname" ng-model-options="{ updateOn: 'blur' }" required />
+                                </div>
+                                <div class="signup-input-block" style="width: 50%;" ng-class="{ 'err': (signupForm1.lastname.$dirty && signupForm1.lastname.$invalid) || (signupForm2.lastname.$dirty && signupForm2.lastname.$invalid) }">
+                                    <input forminput field="lname" group-field="name" type="text" placeholder="Last Name" name="lastname" ng-model="auth.user.lastname" ng-model-options="{ updateOn: 'blur' }" required />
+                                </div>
+                            </div>
+                            <div class="signup-input-group">
+                                <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.email.$timedout && (signupForm1.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername()))) || (signupForm2.email.$timedout && (signupForm2.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername()))) }">
+<!--                                <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm2.email.$timedout && signupForm2.email.$dirty && (signupForm2.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername()))) }">-->
+                                    <input forminput field="email" type="text" placeholder="name@example.com" name="email" ng-model="auth.user.email" required val-on-timeout typing-limit="2000" />
+                                </div>
+                            </div>
+                            <div class="signup-input-group">
+                                <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.password1.$dirty && (signupForm1.password1.$invalid || auth.isLessLengthPassword1())) || (signupForm2.password1.$dirty && (signupForm2.password1.$invalid || auth.isLessLengthPassword1())) }">
+                                    <input forminput field="passwd" type="password" placeholder="password at least 6 characters" name="password1" ng-model="auth.user.password1" ng-model-options="{ updateOn: 'blur' }" required />
+                                </div>
+                            </div>
+                            <div class="signup-input-group">
+                                <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.password2.$dirty && (signupForm1.password2.$invalid || auth.isLessLengthPassword2() || (auth.user.password1 && auth.isPasswordNotMatch()))) || (signupForm2.password2.$dirty && (signupForm2.password2.$invalid || auth.isLessLengthPassword2() || (auth.user.password1 && auth.isPasswordNotMatch()))) }">
+                                    <input forminput field="repasswd" type="password" placeholder="re-password" name="password2"  ng-model="auth.user.password2" ng-model-options="{ updateOn: 'blur' }" required />
+                                </div>
+                            </div>
+                            <div class="signup-input-group">
+                                <div class="signup-input-block" style="width: 100%;"><span>Birthday</span></div>
+                            </div>
+                            <div class="signup-input-group">
+                                <div class="signup-input-block" style="width: 25%;">
+                                    <select forminput field="byear" group-field="birthday" class="init" ng-model="auth.user.byear" ng-model-options="{ updateOn: 'blur' }">
+                                        <option value="" selected>Year</option>
+                                        <option ng-repeat="byear in auth.arrByears" value="{{ byear }}">{{ byear }}</option>
+                                    </select>
+                                </div>
+                                <div class="signup-input-block" style="width: 25%;">
+                                     <select forminput field="bmonth" group-field="birthday" class="init" ng-model="auth.user.bmonth" ng-model-options="{ updateOn: 'blur' }">
+                                        <option value="" selected>Month</option>
+                                        <option ng-repeat="bmonth in auth.arrBmonths" value="{{ bmonth.value }}">{{ bmonth.text }}</option>
+                                    </select>
+                                </div>
+                                <div class="signup-input-block" style="width: 25%;">
+                                    <select forminput field="bday" group-field="birthday" class="init" ng-model="auth.user.bday" ng-model-options="{ updateOn: 'blur' }">
+                                        <option value="" selected>Day</option>
+                                        <option ng-repeat="bday in auth.arrBdays" value="{{ bday.value }}">{{ bday.text }}</option>
+                                    </select>
+                                </div>
+                                <div class="signup-input-block" style="width: 25%;" ng-class="{ 'err': (signupForm1.gender.$dirty && signupForm1.gender.$invalid) || (signupForm2.gender.$dirty && signupForm2.gender.$invalid) }">
+                                    <select forminput field="gender" class="init" name="gender" ng-model="auth.user.gender" ng-model-options="{ updateOn: 'blur' }" required>
+                                        <option value="" selected>Gender</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div align="center" class="signup-agreement">
+                                <div>By Clicking "SIGN UP" below, you are agreeing to the</div>
+                                <div><a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></div>
+                            </div>
+                            <div class="signup-submit">
+                                <button type="submit" formsubmit ng-disabled="signupForm2.$invalid">SIGN UP</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+<!--        </div>-->
+<!--
+
+        </div>
+        <div class="col-md-1 fullheight"></div>
+-->
+    </div>
+</div>
