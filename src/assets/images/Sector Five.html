@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sector Five</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=IE7" />
+    <meta name="viewport" content="width=1280, user-scalable=no" />
+   
+    <script src="rlib/js/mootools/mootools-core-1.4.1-yc.js" type="text/javascript"></script>
+    <script src="rlib/js/mootools/mootools-more-1.4.0.1-yc.js" type="text/javascript"></script>
+    <script src="rjs/search/calculator.js" type="text/javascript"></script>
+    <script src="rjs/global.js" type="text/javascript"></script>
+    <script src="rjs/index.js" type="text/javascript"></script>
+    
+    <link href="rcss/search/search.css" rel="stylesheet" type="text/css" />
+    <link href="rcss/search/calculator.css" rel="stylesheet" type="text/css" />
+    <link href="rcss/global.css" rel="stylesheet" type="text/css" />
+    <link href="rcss/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrapper fullscreen">
+        <div align="center" class="header">
+            <ul class="menu_list">
+                <!--<li class="menu_listitem content" item="home">
+                    <a href="#home"><span>Home</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>
+                <li class="menu_listitem content" item="community">
+                    <a href="#community"><span>Community</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>
+                <li class="menu_listitem content" item="downtown">
+                    <a href="#downtown"><span>Downtown</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>
+                <li class="menu_listitem module" item="search">
+                    <a href="#search"><span>Search</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>
+                <li class="menu_listitem content" item="cart">
+                    <a href="#cart"><span>Cart</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>
+                <li class="menu_listitem content" item="settings">
+                    <a href="#settings"><span>Settings</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>
+                <li class="menu_listitem content" item="forgotpw">
+                    <a href="#forgotpw"><span>Forgot Password</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>-->
+                <!--<li class="menu_listitem module" item="logout">
+                    <a href="#logout"><span>Log out</span></a>
+                    <div align="center" class="notify"><span class="number">0</span></div>-->
+            </ul>
+        </div>
+        <div class="main"></div>
+        <div class="chat">
+            <div class="border"></div>
+            <iframe src="rhtml/chat/chat.html"></iframe>
+        </div>
+        <div class="auth2">
+            <div class="border"></div>
+            <div class="auth2_block">
+                <div style="position:absolute; top:0px; right:0px; width:80px; line-height:40px; border-left:1px solid silver; text-align:center;">Chat</div>
+            </div>
+            <div class="container" style="position:absolute; top:62px; right:0px; bottom:0px; left:0px;">
+                <div class="base" style="position:absolute; top:0px; right:0px; left:0px;">
+                    <div style="position:relative; margin-top:9%;">
+                        <div class="signin" style="visibility:hidden;">
+                            <div class="card">
+                                <div class="passport">
+                                    <div class="background"></div>
+                                    <span class="text">PASSPORT</span>
+                                </div>
+                                <input formuser class="user" type="email" placeholder="name@example.com" />
+                                <input formpasswd class="passwd" type="password" placeholder="password" />
+                                <span formnotify class="notifyerr"></span>
+                                <a href="#" class="forgotpw">FORGOT PASSWORD</a>
+                                <button formsubmit class="submit">SIGN IN</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position:relative; margin-top:24%;">
+                        <div class="signup" style="visibility:hidden;">
+                            <div align="left" style="display:inline-block; color:slategray;">
+                                <div style="font-size:20pt; font-weight:bold; text-align:center;">SIGN UP</div>
+                                <div class="signup-input">
+                                    <input forminput field="fname" group-field="name" type="text" placeholder="First Name" style="margin-right:6px; width:190px;" />
+                                    <input forminput field="lname" group-field="name" type="text" placeholder="Last Name" style="width:190px;" />
+                                </div>
+                                <div class="signup-input input-full"><input forminput field="email" type="email" placeholder="name@example.com" class="full" /></div>
+                                <div class="signup-input input-full"><input forminput field="passwd" type="password" placeholder="password at least 6 characters" class="full" /></div>
+                                <div class="signup-input input-full"><input forminput field="repasswd" type="password" placeholder="re-password" class="full" /></div>
+                                <div class="signup-input">
+                                    Birthday
+                                </div>
+                                <div class="signup-input">
+                                    <select forminput field="bday" group-field="birthday" class="init" style="margin-right:6px; width:69px;">
+                                        <option value="" selected>Day</option>
+                                    </select>
+                                    <select forminput field="bmonth" group-field="birthday" class="init" style="margin-right:6px; width:124px;">
+                                        <option value="" selected>Month</option>
+                                    </select>
+                                    <select forminput field="byear" group-field="birthday" class="init" style="margin-right:6px; width:97px;">
+                                        <option value="" selected>Year</option>
+                                    </select>
+                                    <select forminput field="sex" class="init" style="width:96px;">
+                                        <option value="" selected>Gender</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
+                                    </select>
+                                </div>
+                                <div align="center" class="signup-agreement">
+                                    <div>By Clicking "SIGN UP" below, you are agreeing to the</div>
+                                    <div><a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></div>
+                                </div>
+                                <div class="signup-submit">
+                                    <button formsubmit class="btn">SIGN UP</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div align="center" class="auth" style="display:none;">
+            <div class="container">
+                <div class="signin">
+                    <div class="card">
+                        <div class="passport">
+                            <div class="background"></div>
+                            <span class="text">PASSPORT</span>
+                        </div>
+                        <input formuser class="user" type="email" placeholder="name@example.com" />
+                        <input formpasswd class="passwd" type="password" placeholder="password" />
+                        <span formnotify class="notifyerr"></span>
+                        <a href="#" class="forgotpw">FORGOT PASSWORD</a>
+                        <button formsubmit class="submit">SIGN IN</button>
+                    </div>
+                </div>
+                <div class="signup">
+                    <div style="position:absolute; top:50%; right:0px; left:0px; margin-top:-241px;">
+                        <div align="left" style="display:inline-block; color:slategray">
+                            <div style="font-size:20pt; font-weight:bold; text-align:center;">SIGN UP</div>
+                            <div class="signup-input">
+                                <input forminput field="fname" group-field="name" type="text" placeholder="First Name" style="margin-right:6px; width:190px;" />
+                                <input forminput field="lname" group-field="name" type="text" placeholder="Last Name" style="width:190px;" />
+                            </div>
+                            <div class="signup-input input-full"><input forminput field="email" type="email" placeholder="name@example.com" class="full" /></div>
+                            <div class="signup-input input-full"><input forminput field="passwd" type="password" placeholder="password at least 6 characters" class="full" /></div>
+                            <div class="signup-input input-full"><input forminput field="repasswd" type="password" placeholder="re-password" class="full" /></div>
+                            <div class="signup-input">
+                                Birthday
+                            </div>
+                            <div class="signup-input">
+                                <select forminput field="bday" group-field="birthday" class="init" style="margin-right:6px; width:69px;">
+                                    <option value="" selected>Day</option>
+                                </select>
+                                <select forminput field="bmonth" group-field="birthday" class="init" style="margin-right:6px; width:124px;">
+                                    <option value="" selected>Month</option>
+                                </select>
+                                <select forminput field="byear" group-field="birthday" class="init" style="margin-right:6px; width:97px;">
+                                    <option value="" selected>Year</option>
+                                </select>
+                                <select forminput field="sex" class="init" style="width:96px;">
+                                    <option value="" selected>Gender</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </div>
+                            <div align="center" class="signup-agreement">
+                                <div>By Clicking "SIGN UP" below, you are agreeing to the</div>
+                                <div><a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></div>
+                            </div>
+                            <div class="signup-submit">
+                                <button formsubmit class="btn">SIGN UP</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- S. by Manit K. -->
+        <div class="search_area" style="position: absolute;top: 55px;left: 0px;right: 0px;bottom: 0px; display:none;">
+            <div class="absfull" style="background-color: rgb(222, 222, 222); opacity:0.8;"></div>
+            <div class="search_base" style="position:absolute; top:36px; right:25%; left:25%; height:46px; border-radius:6px; -webkit-box-shadow: 0px 2px 8px 6px rgba(0,0,0,0.2); -moz-box-shadow: 0px 2px 8px 6px rgba(0,0,0,0.2); box-shadow: 0px 2px 8px 6px rgba(0,0,0,0.2); overflow:hidden;">
+                <div class="search_groupblock">
+                    <div class="search_inputblock" style="padding-right:90px; background-color:white;">
+                        <input type="text" placeholder="Search" style="padding-left:30px; padding-right:60px; width:100%; height:44px; font-size:16pt; border-radius:6px; border:none;" />
+                        <div align="center" class="clear" style="position:absolute; top:12px; right:30px; background-color:silver; font-size:9pt; width:21px; border-radius:10px; cursor:pointer; visibility:hidden;"><span style="color:white; line-height:21px;">X</span></div>
+                    </div>
+                    <div class="search_separateline" style="background-color:white;">
+                        <div style="margin:0 30px; height:1px; background-color:silver;"></div>
+                    </div>
+                    <div class="search_resultblock" style="position:relative; background-color:white; opacity:0;">
+                        <div class="leftside" style="position:absolute; top:0px; bottom:0px; left:0px; width:40%;">
+                            <div class="block">
+                                <div class="overview calculator"></div>
+                                <div class="overview"></div>
+                                <div class="overview"></div>
+                            </div>
+                        </div>
+                        <div class="separate" style="position:absolute; top:0px; bottom:0px; left:40%; width:1px; background-color:silver;"></div>
+                        <div class="rightside" style="position:absolute; top:0px; right:0px; bottom:0px; left:40%;">
+                            <div class="block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- F. by Manit K. -->
+    </div>
+    <div class="logoutblur absfull fullscreen">
+        <div align="center" style="position: absolute;top: 0px;right: 0px;left: 0px;bottom: 0px;">
+            <div id="card">
+                <div class="passport">
+                    <div class="background"></div>
+                    <span class="text">PASSPORT</span>
+                </div>
+                <div class="user ellipsis">Ratthasapa Vatthanaautsahapong</div>
+                <input class="passwd" type="password" placeholder="Password" />
+                <span class="notifyerr"></span>
+                <button class="signout">SIGN OUT</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

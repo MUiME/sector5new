@@ -1,0 +1,20 @@
+.kk {
+  width: 200px;
+  line-height: 50px;
+  margin-left: 30px;
+}
+
+.header {
+  color: #36A0FF;
+  font-size: 27px;
+  padding: 10px;
+}
+
+.bigicon {
+  font-size: 35px;
+  color: #36A0FF;
+}
+
+li {
+  list-style-type: none;
+}

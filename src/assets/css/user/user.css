@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "SukhumvitSet-Text";
+  src: url(/fonts/SukhumvitSet-Text/SukhumvitSet-Text.eot);
+  src: url(/fonts/SukhumvitSet-Text/SukhumvitSet-Text.eot?#iefix) format('embedded-opentype'), url(/fonts/SukhumvitSet-Text/SukhumvitSet-Text.ttf) format('truetype'), url(/fonts/SukhumvitSet-Text/SukhumvitSet-Text.woff) format('woff'), url(/fonts/SukhumvitSet-Text/SukhumvitSet-Text.svg) format('svg');
+}
+.user-listitem {
+  font-family: SukhumvitSet-Text;
+  color: firebrick;
+}
+
+.emotion-disappoint {
+  height: 233px;
+  background-image: url('/images/disappointment.png');
+  margin: 15px;
+}

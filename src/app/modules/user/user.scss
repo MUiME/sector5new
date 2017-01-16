@@ -1,0 +1,24 @@
+@import "compass/css3/font-face";
+
+$margin: 15px;
+
+@include font-face("SukhumvitSet-Text",
+    font-files(
+        font-url("SukhumvitSet-Text/SukhumvitSet-Text.ttf", true, false),
+        font-url("SukhumvitSet-Text/SukhumvitSet-Text.woff", true, false),
+        font-url("SukhumvitSet-Text/SukhumvitSet-Text.svg", true, false)
+    ),
+    font-url("SukhumvitSet-Text/SukhumvitSet-Text.eot", true, false)
+);
+
+.user-listitem{
+    font-family: SukhumvitSet-Text;
+    color: firebrick;
+
+}
+
+.emotion-disappoint{
+    height: 233px;
+    background-image: image-url("disappointment.png", false, false);
+    margin: $margin;
+}

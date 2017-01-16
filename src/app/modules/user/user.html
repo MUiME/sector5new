@@ -1,0 +1,12 @@
+<div>
+    <div>This is user page.</div>
+    <div>
+        <button ng-click="$ctrl.listUsers()" class="btn">List</button>
+    </div>
+    <div>
+        <ui ng-repeat="user in $ctrl.list_user">
+            <li class="user-listitem">{{ user.name }} {{ user.position }}</li>
+        </ui>
+    </div>
+    <div class="emotion-disappoint"></div>
+</div>

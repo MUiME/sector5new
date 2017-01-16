@@ -1,0 +1,23 @@
+<div align="center" class="auth">
+    <div class="logout">
+        <div class="card">
+            <div class="passport">
+                <div class="background"></div>
+                <span class="text">PASSPORT</span>
+            </div>
+            <form name="logoutForm" role="form" method="post" ng-submit="auth.logout()" novalidate>
+                <div class="user ellipsis">{{ userLogout() }}</div>
+                <div class="notifyerr">
+                    <span ng-show="auth.error.logout">
+                        <span ng-show="auth.logoutFailed.current == auth.logoutFailed.SIGNOUT">SIGN OUT automatically</span>
+                        <span ng-show="auth.logoutFailed.current > 0 && auth.logoutFailed.current < auth.logoutFailed.SIGNOUT">LOG OUT {{auth.logoutFailed.current}} failed</span>
+                    </span>
+                </div>
+                <input auth-logout-input formpasswd name="passwordLogout" class="passwd" type="password" placeholder="password" ng-model="auth.passwordLogout" required />
+                <a href="#" class="forgotpw" ng-show="auth.logoutFailed.current >= auth.logoutFailed.FORGOTPW">FORGOT PASSWORD</a>
+                <button type="button" class="signout" ng-click="auth.signout()">SIGN OUT</button>
+                <button type="submit" class="submit" ng-hide="logoutForm.passwordLogout.$error.required">SIGN IN</button>
+            </form>
+        </div>
+    </div>
+</div>

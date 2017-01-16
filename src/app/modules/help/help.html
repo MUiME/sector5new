@@ -1,0 +1,224 @@
+<div id="homepage " class="row  ">
+     <div class="col-md-9 col-sm-9 col-xs-12 ">
+        <div ui-view="top" class="pagetop col-md-12 col-sm-12 col-xs-12">
+           <div style="display:inline-block;width:100%;">
+               <h2>Help</h2>
+<!--
+               <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle Chat</button>
+              </p>
+-->
+
+           </div>
+
+        </div>
+        <div ui-view="left" class="pageleft col-md-3 col-sm-3 col-xs-12 ">
+            <li style="margin-top:30px;">
+                <a href="#" style="text-decoration: none;"><h4>จะติดต่อเราได้อย่างไร?</h4></a>
+                <a href="#" style="text-decoration: none;"><h4>ฉันไม่สามารถเข้าสู่ระบบได้ ?</h4></a>
+                <a href="#" style="text-decoration: none;"><h4>นโยบายความเป็นส่วนตัว</h4></a>
+            </li>
+        </div>
+        <div ui-view="center" class="pagecenter col-md-9 col-sm-9 col-xs=12 ">
+           <div style="margin-top:30px;">
+               <h4>คุณสามารถเลือกติดต่อเรา ทีมงาน Sector5 ได้ดังต่อไปนี้</h4><br>
+                <span>Hot Line : โทร. 02-999-9999</span><br>
+                <span>E-mail : info@muime.com</span><br>
+                <span>ติดต่อสำนักงาน : 455 ซอย พึ่งมี23 ถ.สุขุมวิท93 แขวงบางจาก เขตพระโขนง กทม 10260</span><br>
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+                        <legend class="text-center header">Contact us</legend>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+           </div>
+
+        </div>
+
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-12">
+        <div ui-view="right" class="pageright col-xs-9 col-sm-2 col-md-12">
+
+            <div class="containert clearfix">
+                <div class="people-list" id="people-list">
+                    <div class="search">
+                        <input type="text" placeholder="search" />
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <ul class="list" >
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Vincent Porter</div>
+                                <div class="status">
+                                    <i class="fa fa-circle online"></i> online
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Aiden Chavez</div>
+                                <div class="status">
+                                    <i class="fa fa-circle offline"></i> left 7 mins ago
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Mike Thomas</div>
+                                <div class="status">
+                                    <i class="fa fa-circle online"></i> online
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_04.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Erica Hughes</div>
+                                <div class="status">
+                                    <i class="fa fa-circle online"></i> online
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_05.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Ginger Johnston</div>
+                                <div class="status">
+                                    <i class="fa fa-circle online"></i> online
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_06.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Tracy Carpenter</div>
+                                <div class="status">
+                                    <i class="fa fa-circle offline"></i> left 30 mins ago
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_07.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Christian Kelly</div>
+                                <div class="status">
+                                    <i class="fa fa-circle offline"></i> left 10 hours ago
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg" alt="avatar" />
+                            <div class="about">
+                                <div class="name">Peyton Mckinney</div>
+                                <div class="status">
+                                    <i class="fa fa-circle online"></i> online
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+            <!-- end chat -->
+
+        </div>
+        <!-- end container -->
+
+        <script id="message-template" type="text/x-handlebars-template">
+            <li class="clearfix">
+                <div class="message-data align-right">
+                    <span class="message-data-time">{{time}}, Today</span> &nbsp; &nbsp;
+                    <span class="message-data-name">Olia</span> <i class="fa fa-circle me"></i>
+                </div>
+                <div class="message other-message float-right">
+                    {{messageOutput}}
+                </div>
+            </li>
+        </script>
+
+        <script id="message-response-template" type="text/x-handlebars-template">
+            <li>
+                <div class="message-data">
+                    <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+                    <span class="message-data-time">{{time}}, Today</span>
+                </div>
+                <div class="message my-message">
+                    {{response}}
+                </div>
+            </li>
+        </script>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--
+<div>
+    <div>This is Help page.</div>
+    <br>
+    <h2>Contact</h2>
+
+    <div class="card" >
+      <img align="center" src="/images/img_avatar.png" alt="Avatar" style="width:100%">
+      <div class="containerg" >
+        <h4><b>John Doe</b></h4>
+        <p>Architect & Engineer</p>
+      </div>
+    </div>
+
+
+</div>
+-->

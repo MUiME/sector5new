@@ -1,0 +1,36 @@
+#homepage {
+  width: 100%;
+  height: 100%;
+}
+
+.pagetop {
+  background-color: blanchedalmond;
+}
+
+.pageleft {
+  background-color: aquamarine;
+}
+
+.pagecenter {
+  background-color: cadetblue;
+}
+
+.pageright {
+  background-color: coral;
+}
+
+.twt-wrapper .panel-body {
+  max-height: 650px;
+  overflow: auto;
+}
+
+.twt-wrapper .media-list .media img {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #e5e7e8;
+}
+
+.twt-wrapper .media-list .media {
+  border-bottom: 1px dashed #efefef;
+  margin-bottom: 25px;
+}
