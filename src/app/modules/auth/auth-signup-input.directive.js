@@ -12,7 +12,7 @@ export function authSignupInput($timeout) {
                     $timeout.cancel(_$timeout);
                 }
                 _$timeout = $timeout(() => {
-                    let elInputError = $(".auth .signup .signup-input-block.err *[auth-signup-input]");
+                    let elInputError = $(".signup-input-block.err *[auth-signup-input]");
                     if(elInputError.length){
                         let inputName = elInputError.attr("name");
                         scope.auth.firstInputError = inputName;
@@ -20,7 +20,7 @@ export function authSignupInput($timeout) {
                     else{
                         scope.auth.firstInputError = null;
                     }
-                }, ctrl.$options.debounce);
+                }, ctrl.$options.$$options.debounce);
             }
 
             if(elem.prop("tagName") == "INPUT"){
