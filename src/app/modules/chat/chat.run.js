@@ -1,9 +1,7 @@
 export function ChatRun($rootScope, $state, AuthService) {
     "ngInject";
 
-//    $rootScope.$on('$stateChangeSuccess', (event, next, toState) => {
-//        if (!AuthService.isSignedIn()) {
-//            $state.go("main.downtown.auth");
-//        }
-//    });
+    $rootScope.$on('$stateChangeSuccess', (event, next, toState) => {
+        $rootScope.chatModuleSwitch = AuthService.isSignedIn()? "active": "inactive";
+    });
 }

@@ -10,15 +10,13 @@
         </div>
     </div>
     <div id="rightside" class="main-rightside col-xs-12 col-sm-3 col-md-3">
-
-<!--    <div class="pageright col-xs-12 col-sm-4 col-md-3" >-->
-<!--
-        <div ui-view="right" class="pageright col-xs-9 col-sm-12 col-md-12">
-
-        </div>
--->
-        <div ui-view="right" class="pageright">
-
+        <div ng-switch on="chatModuleSwitch" ng-cloak>
+            <div ng-switch-when="inactive">
+                <ng-include src="'modules/auth/auth-rightside.html'" class="pageright" ng-controller="AuthController as auth"></ng-include>
+            </div>
+            <div ng-switch-when="active">
+                <ng-include src="'modules/chat/chat.html'" class="pageright" ng-controller="ChatController as chat"></ng-include>
+            </div>
         </div>
     </div>
 </div>

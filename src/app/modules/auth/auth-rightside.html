@@ -1,0 +1,211 @@
+<div id="authRightside" class="auth-rightside">
+<!--    <div class="base" style="position:absolute; top:0px; right:0px; left:0px;">-->
+<!--        <div style="position:relative; margin-top:9%;">-->
+        <div style="position:relative; margin-top:3%;">
+            <div class="signin" auth-rightside-signin>
+                <div class="card">
+                    <div class="passport">
+                        <div class="background"></div>
+                        <span class="text">PASSPORT</span>
+                    </div>
+                    <form name="signinForm2" role="form" method="post" ng-submit="auth.signin()" novalidate>
+                        <input auth-signin-input formuser class="user" type="text" placeholder="name@example.com" ng-model="auth.user.username" required />
+                        <div class="notifyerr">
+                            <span ng-show="auth.error.signin">USER or PASSWORD incorrect</span>
+                        </div>
+                        <input auth-signin-input formpasswd class="passwd" type="password" placeholder="password" ng-model="auth.user.password" required />
+                        <a href="#" class="forgotpw">FORGOT PASSWORD</a>
+                        <button type="submit" formsubmit class="submit" ng-disabled="signinForm2.$invalid">SIGN IN</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+<!--
+            <div class="signin">
+                <div class="card">
+                    <div class="passport">
+                        <div class="background"></div>
+                        <span class="text">PASSPORT</span>
+                    </div>
+                    <input formuser class="user" type="email" placeholder="name@example.com" />
+                    <input formpasswd class="passwd" type="password" placeholder="password" />
+                    <span formnotify class="notifyerr"></span>
+                    <a href="#" class="forgotpw">FORGOT PASSWORD</a>
+                    <button formsubmit class="submit">SIGN IN</button>
+                </div>
+            </div>
+-->
+        </div>
+        <div style="position:relative; margin-top:15%;">
+            <div class="signup" auth-rightside-signup>
+                <div class="vcenter-block" style="margin-top:-239px; right: -98px; left: -98px;">
+                    <div align="left" style="color:slategray">
+                        <div class="signup-header">
+                            <div class="signup-title" ng-show="!auth.hasFirstInputError()">SIGN UP</div>
+                            <div class="signup-notifyerr" ng-show="auth.hasFirstInputError()">
+                                <div ng-show="auth.isFirstInputError('firstname')">
+                                    <p ng-show="(signupForm1.firstname.$dirty || signupForm2.firstname.$dirty) && signupForm2.firstname.$error.required">First name is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('lastname')">
+                                    <p ng-show="(signupForm1.lastname.$dirty || signupForm2.lastname.$dirty) && signupForm2.lastname.$error.required">Last name is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('email')">
+                                    <p ng-show="signupForm2.email.$valid && auth.error.notEmail">Email is invalid.</p>
+                                    <p ng-show="signupForm2.email.$valid && auth.error.duplicateUsername">Email is already in used.</p>
+                                    <p ng-show="(signupForm1.email.$dirty || signupForm2.email.$dirty) && signupForm2.email.$error.required">Email is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('password1')">
+                                    <p ng-show="signupForm2.password1.$valid && auth.error.lessLengthPassword1">Password must no less than 6 characters.</p>
+                                    <p ng-show="(signupForm1.password1.$dirty || signupForm2.password1.$dirty) && signupForm2.password1.$error.required">Password is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('password2')">
+                                    <p ng-show="signupForm2.password2.$valid && auth.error.lessLengthPassword2">Re-password must no less than 6 characters.</p>
+                                    <p ng-show="signupForm2.password2.$valid && auth.error.passwordsNotMatch">Passwords do not match.</p>
+                                    <p ng-show="(signupForm1.password2.$dirty || signupForm2.password2.$dirty) && signupForm2.password2.$error.required">Re-password is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('byear')">
+                                    <p ng-show="(signupForm1.byear.$dirty || signupForm2.byear.$dirty) && signupForm2.byear.$error.required">Year of birthday is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('bmonth')">
+                                    <p ng-show="(signupForm1.bmonth.$dirty || signupForm2.bmonth.$dirty) && signupForm2.bmonth.$error.required">Month of birthday is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('bday')">
+                                    <p ng-show="signupForm2.bday.$valid && auth.error.invalidBirthday">Birthday is invalid.</p>
+                                    <p ng-show="(signupForm1.bday.$dirty || signupForm2.bday.$dirty) && signupForm2.bday.$error.required">Day of birthday is required.</p>
+                                </div>
+                                <div ng-show="auth.isFirstInputError('gender')">
+                                    <p ng-show="(signupForm1.gender.$dirty || signupForm2.gender.$dirty) && signupForm2.gender.$error.required">Gender is required.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="signup-body">
+                            <form name="signupForm2" role="form" method="post" ng-submit="auth.signup()" novalidate ng-model-options="{ debounce: 500 }" style="margin: 0 2%">
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 50%;" ng-class="{ 'err': (signupForm1.firstname.$dirty || signupForm2.firstname.$dirty) && signupForm2.firstname.$invalid }">
+                                        <input auth-signup-input forminput field="fname" group-field="name" type="text" placeholder="First Name" name="firstname" ng-model="auth.user.firstname" required />
+                                    </div>
+                                    <div class="signup-input-block" style="width: 50%;" ng-class="{ 'err': (signupForm1.lastname.$dirty || signupForm2.lastname.$dirty) && signupForm2.lastname.$invalid }">
+                                        <input auth-signup-input forminput field="lname" group-field="name" type="text" placeholder="Last Name" name="lastname" ng-model="auth.user.lastname" required />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.email.$dirty || signupForm2.email.$dirty) && (signupForm2.email.$invalid || auth.isNotEmail() || (auth.user.email && auth.isDuplicateUsername())) }">
+                                        <input auth-signup-input forminput field="email" type="text" placeholder="name@example.com" name="email" ng-model="auth.user.email" required />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.password1.$dirty || signupForm2.password1.$dirty) && (signupForm2.password1.$invalid || auth.isLessLengthPassword1()) }">
+                                        <input auth-signup-input forminput field="passwd" type="password" placeholder="password at least 6 characters" name="password1" ng-model="auth.user.password1" required />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 100%;" ng-class="{ 'err': (signupForm1.password2.$dirty || signupForm2.password2.$dirty) && (signupForm2.password2.$invalid || auth.isLessLengthPassword2() || (auth.user.password1 && auth.isPasswordsNotMatch())) }">
+                                        <input auth-signup-input forminput field="repasswd" type="password" placeholder="re-password" name="password2"  ng-model="auth.user.password2" required />
+                                    </div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 100%;"><span>Birthday</span></div>
+                                </div>
+                                <div class="signup-input-group">
+                                    <div class="signup-input-block" style="width: 25%;" ng-class="{ 'err': (signupForm1.byear.$dirty || signupForm2.byear.$dirty) && signupForm2.byear.$invalid }">
+                                        <select auth-signup-input forminput field="byear" group-field="birthday" class="init" name="byear" ng-model="auth.user.byear" required>
+                                            <option value="" selected>Year</option>
+                                            <option ng-repeat="byear in auth.arrByears" value="{{ byear }}">{{ byear }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="signup-input-block" style="width: 25%;" ng-class="{ 'err': (signupForm1.bmonth.$dirty || signupForm2.bmonth.$dirty) && signupForm2.bmonth.$invalid }">
+                                         <select auth-signup-input forminput field="bmonth" group-field="birthday" class="init" name="bmonth" ng-model="auth.user.bmonth" required>
+                                            <option value="" selected>Month</option>
+                                            <option ng-repeat="bmonth in auth.arrBmonths" value="{{ bmonth.value }}">{{ bmonth.text }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="signup-input-block" style="width: 25%;" ng-class="{ 'err': (signupForm1.bday.$dirty || signupForm2.bday.$dirty) && (signupForm2.bday.$invalid || auth.isInvalidBirthday()) }">
+                                        <select auth-signup-input forminput field="bday" group-field="birthday" class="init" name="bday" ng-model="auth.user.bday" required>
+                                            <option value="" selected>Day</option>
+                                            <option ng-repeat="bday in auth.arrBdays" value="{{ bday.value }}">{{ bday.text }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="signup-input-block" style="width: 25%;" ng-class="{ 'err': (signupForm1.gender.$dirty || signupForm2.gender.$dirty) && signupForm2.gender.$invalid }">
+                                        <select auth-signup-input forminput field="gender" class="init" name="gender" ng-model="auth.user.gender" required>
+                                            <option value="" selected>Gender</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div align="center" class="signup-agreement">
+                                    <div>By Clicking "SIGN UP" below, you are agreeing to the</div>
+                                    <div><a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></div>
+                                </div>
+                                <div class="signup-submit">
+                                    <button type="submit" formsubmit ng-disabled="signupForm2.$invalid || auth.error.duplicateUsername || auth.error.notEmail || auth.error.lessLengthPassword1 || auth.error.lessLengthPassword2 || auth.error.passwordsNotMatch || auth.error.invalidBirthday">SIGN UP</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+            <div class="signup">
+                <div align="left" style="display:inline-block; color:slategray;">
+                    <div style="font-size:20pt; font-weight:bold; text-align:center;">SIGN UP</div>
+                    <div class="signup-input">
+                        <input forminput field="fname" group-field="name" type="text" placeholder="First Name" style="margin-right:6px; width:190px;" />
+                        <input forminput field="lname" group-field="name" type="text" placeholder="Last Name" style="width:190px;" />
+                    </div>
+                    <div class="signup-input input-full"><input forminput field="email" type="email" placeholder="name@example.com" class="full" /></div>
+                    <div class="signup-input input-full"><input forminput field="passwd" type="password" placeholder="password at least 6 characters" class="full" /></div>
+                    <div class="signup-input input-full"><input forminput field="repasswd" type="password" placeholder="re-password" class="full" /></div>
+                    <div class="signup-input">
+                        Birthday
+                    </div>
+                    <div class="signup-input">
+                        <select forminput field="bday" group-field="birthday" class="init" style="margin-right:6px; width:69px;">
+                            <option value="" selected>Day</option>
+                        </select>
+                        <select forminput field="bmonth" group-field="birthday" class="init" style="margin-right:6px; width:124px;">
+                            <option value="" selected>Month</option>
+                        </select>
+                        <select forminput field="byear" group-field="birthday" class="init" style="margin-right:6px; width:97px;">
+                            <option value="" selected>Year</option>
+                        </select>
+                        <select forminput field="sex" class="init" style="width:96px;">
+                            <option value="" selected>Gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                    <div align="center" class="signup-agreement">
+                        <div>By Clicking "SIGN UP" below, you are agreeing to the</div>
+                        <div><a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></div>
+                    </div>
+                    <div class="signup-submit">
+                        <button formsubmit class="btn">SIGN UP</button>
+                    </div>
+                </div>
+            </div>
+-->
+        </div>
+<!--    </div>-->
+</div>
