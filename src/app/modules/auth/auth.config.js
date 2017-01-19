@@ -9,8 +9,6 @@ export function AuthConfig($stateProvider, $httpProvider, jwtOptionsProvider, Id
         tokenGetter($http, $window, jwtHelper) {
             "ngInject";
 
-            //console.log("tokenGetter");
-
             if($window.localStorage.token){
                 if(jwtHelper.isTokenExpired($window.localStorage.token)){
                     return null;
@@ -35,14 +33,15 @@ export function AuthConfig($stateProvider, $httpProvider, jwtOptionsProvider, Id
                 return null;
             }
         },
-        unauthenticatedRedirector($window, $state) {
+        unauthenticatedRedirector($window, $state, AuthService) {
             "ngInject";
 
-            delete $window.localStorage.token;
-            delete $window.localStorage.isLoggedOut;
+            if(Auth.isSignedIn()){
+                delete $window.localStorage.token;
+                delete $window.localStorage.isLoggedOut;
 
-            $state.go("auth");
-            //$state.reload();
+                $state.go("auth");
+            }
         },
         whiteListedDomains: ["localhost", "192.168.10.1", "192.168.2.10"]
     });
