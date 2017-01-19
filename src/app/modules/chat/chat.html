@@ -198,77 +198,70 @@
 		  <textarea type="text" id="chatConvInput" class="conversation__input" placeholder="Your message" ng-model="chat.newMsg" chat-conversation-input></textarea>
 
 		  <div class="conversation__tool">
-			  <div class="conversation__table">
-				  <div class="conversation__row">
-					  <div class="conversation__cell1">
-						  <div align="center" class="conversation__padpic">
-							<img class="conversation__pic" src="/images/smiling.png" chat-conversation-tool="emo"/><br>
-							  <span class="conversation__spanmenu" aling="center">Emotion</span>
-
-						  </div>
-					  </div>
-					  <div class="conversation__cell2">
-						  <div align="center" class="conversation__padpic">
-							  <img class="conversation__pic" src="/images/attachment.png" chat-conversation-tool="sendfile"/><br>
-							  <span class="conversation__spanmenu" aling="center">Send File</span>
-						  </div>
-					  </div>
-					  <div class="conversation__cell2">
-						  <div align="center" class="conversation__padpic">
-							  <img class="conversation__pic" src="/images/photo-camera.png" chat-conversation-tool="takephoto" /><br>
-							  <span class="conversation__spanmenu" aling="center">Take Photo</span>
-						  </div>
-					  </div>
-					  <div class="conversation__cell2">
-						  <div align="center" class="conversation__padpic">
-							   <img class="conversation__pic" src="/images/mobile-phone.png" chat-conversation-tool="call"/><br>
-							  <span class="conversation__spanmenu" aling="center">Call</span>
-						  </div>
-					  </div>
-					  <div class="conversation__cell2">
-						  <div align="center" class="conversation__padpic">
-							   <img class="conversation__pic" src="/images/video-camera.png" chat-conversation-tool="videocall"/><br>
-							  <span class="conversation__spanmenu" aling="center">Video Call</span>
-						  </div>
-					  </div>
-				  </div>
-				  <div class="conversation__row">
-					  <div class="conversation__cell3">
-						  <div align="center" class="conversation__padpic">
-							   <img class="conversation__pic" src="/images/joinchat.png" chat-conversation-tool="joinchat"/><br>
-							  <span class="conversation__spanmenu" aling="center">Join Chat</span>
-						  </div>
-					  </div>
-					  <div class="conversation__cell4">
-						  <div align="center" class="conversation__padpic">
-							   <img class="conversation__pic" src="/images/map-location.png" chat-conversation-tool="location"/><br>
-							  <span class="conversation__spanmenu" aling="center">Location</span>
-						  </div>
-					  </div>
-					  <div class="conversation__cell4">
-						  <div align="center" class="conversation__padpic">
-							   <img class="conversation__pic" src="/images/newpage.png" chat-conversation-tool="newpage"/><br>
-							  <span class="conversation__spanmenu" aling="center">MutiChat</span>
-						  </div>
-					  </div>
-					  <div class="conversation__cell4">
-						  <div align="center" class="conversation__padpic">
-							   <img class="conversation__pic" src="/images/settings.png" chat-conversation-tool="setting"/><br>
-							  <span class="conversation__spanmenu" aling="center">Settings</span>
-						  </div>
-					  </div>
-					  <div class="conversation__cell4">
-						  <div align="center" class="conversation__padpic">
-							   <img class="conversation__pic" src="/images/block.png" chat-conversation-tool="block"/><br>
-							  <span class="conversation__spanmenu" aling="center">Block</span>
-						  </div>
-					  </div>
-				  </div>
-
-
-			  </div>
-
-
+              <div class="conversation__toolContainer">
+                <ul>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Emotion">
+                            <img class="conversation__toolIconPic" src="/images/smiling.png" chat-conversation-tool="emo" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Emotion</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Send File">
+                            <img class="conversation__toolIconPic" src="/images/attachment.png" chat-conversation-tool="sendfile" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Send File</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Take Photo">
+                            <img class="conversation__toolIconPic" src="/images/photo-camera.png" chat-conversation-tool="takephoto" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Take Photo</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Call">
+                            <img class="conversation__toolIconPic" src="/images/mobile-phone.png" chat-conversation-tool="call" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Call</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Video Call">
+                            <img class="conversation__toolIconPic" src="/images/video-camera.png" chat-conversation-tool="videocall" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Video Call</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Join Chat">
+                            <img class="conversation__toolIconPic" src="/images/joinchat.png" chat-conversation-tool="joinchat" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Join Chat</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Location">
+                            <img class="conversation__toolIconPic" src="/images/map-location.png" chat-conversation-tool="location" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Location</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="MutiChat">
+                            <img class="conversation__toolIconPic" src="/images/newpage.png" chat-conversation-tool="newpage" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">MutiChat</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Settings">
+                            <img class="conversation__toolIconPic" src="/images/settings.png" chat-conversation-tool="setting" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Settings</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div align="center" class="conversation__toolIcon" title="Block">
+                            <img class="conversation__toolIconPic" src="/images/block.png" chat-conversation-tool="block" />
+                            <div class="conversation__toolIconName ellipsis" aling="center">Block</div>
+                        </div>
+                    </li>
+                </ul>
+              </div>
 		  </div>
           <div id="chatConvBrowseFiles" class="conversation__browsefiles"></div>
 <!--	  	<input type="text" class="conversation__input" placeholder="Your message" ng-model="newChatMsg" chat-conversation-input />-->

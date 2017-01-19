@@ -621,7 +621,7 @@ svg {
     position: absolute;
     top: 8.5rem;
     right: 0rem;
-    bottom: 17.7rem;
+    bottom: 18rem;
     left: 0rem;
     padding-top: 15px;
     overflow-y: auto;
@@ -631,7 +631,7 @@ svg {
         position: absolute;
         top: 8.5rem;
         right: 0rem;
-        bottom: 14rem;
+        bottom: 18rem;
         left: 0rem;
         background-color: white;
     }
@@ -639,6 +639,7 @@ svg {
         display: table;
         width:100%;
         height: 100%;
+        border: 10px solid transparent;
     }
     &__droppable{
         display: table-cell;
@@ -648,6 +649,7 @@ svg {
         text-align: center;
         border: 3px dashed;
         color: lightskyblue;
+        border-radius: 10px;
 
         &:before{
             content: "Drag Files Here";
@@ -767,74 +769,58 @@ svg {
 	}
 
 	&__tool{
-		display: flex;
 		position: absolute;
 		bottom: 0px;
 		height: 14rem;
 		width: 100%;
 		background-color: white;
+		overflow-y: auto;
+        overflow-x: hidden;
 		//border-top: 1px solid #E9EAF3;
 	}
-	&__padpic{
-		//width: 20%;
-		padding: 0 5px ;
+    &__toolContainer{
+        position: absolute;
+        left: 0px;
+        right: -4px;
 
-		//display: flex;
-	}
-	&__pic{
+        ul{
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            font-size: 0pt;
+            list-style-type: none;
+
+            & > li{
+                position: relative;
+                display: inline-block;
+                width: 20%;
+                border: 1px dashed #cccccc;
+                margin-bottom: -1px;
+                margin-right: -1px;
+
+                &:before{
+                    content: "";
+                    display: block;
+                    padding-top: 100%;
+                }
+            }
+        }
+    }
+	&__toolIcon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+		position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;
+		padding: 0 5px ;
+        cursor: pointer;
+    }
+	&__toolIconPic{
 		width: 100%;
 		max-width: 3rem;
 		margin-top: 4px;
-    	margin-bottom: -4px;
-
-
 	}
-	&__table{
-		display: table;
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-
-	}
-	&__row{
-		display:table-row;
-
-
-	}
-	&__cell1{
-		display: table-cell;
-		border: 1px dashed #cccccc;
-		//line-height: 3.8rem;
-		vertical-align: middle;
-
-	}
-	&__cell2{
-		display: table-cell;
-		border-width: 1px 1px 1px 0px;
-		border-style:  dashed;
-		border-color: #cccccc;
-		//line-height: 3.8rem;
-		vertical-align: middle;
-
-	}
-	&__cell3{
-		display: table-cell;
-		border-width: 0px 1px 1px 1px;
-		border-style:  dashed;
-		border-color: #cccccc;
-		//line-height: 3.8rem;
-		vertical-align: middle;
-
-	}
-	&__cell4{
-		display: table-cell;
-		border-width: 0px 1px 1px 0px;
-		border-style:  dashed;
-		border-color: #cccccc;
-		//line-height: 3.8rem;
-		vertical-align: middle;
-
+	&__toolIconName{
+		font-size: 9pt;
 	}
   &__input {
     position: absolute;
@@ -851,9 +837,50 @@ svg {
 	&__browsefiles{
 		visibility: hidden;
 	}
-	&__spanmenu{
-		font-size: 9pt;
-	}
+}
+
+/* Style for icon tools 2 cols/row */
+@media (min-width: 768px) {
+    .conversation {
+        &__toolContainer{
+            right: -1px;
+
+            ul{
+                & > li{
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+/* Style for icon tools 3 cols/row */
+@media (min-width: 992px) {
+    .conversation {
+        &__toolContainer{
+            right: -2px;
+
+            ul{
+                & > li{
+                    width: 33.33333333%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .conversation {
+        &__toolContainer{
+            right: -3px;
+
+            ul{
+                & > li{
+                    width: 25%;
+                }
+            }
+        }
+    }
 }
 
 .ripple {
@@ -925,3 +952,4 @@ svg {
     background: -o-linear-gradient(top, white 20%, rgba(245, 245, 245, 0));
     background: linear-gradient(to top, white 20%, rgba(245, 245, 245, 0));
 }
+
