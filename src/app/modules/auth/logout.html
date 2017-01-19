@@ -10,7 +10,8 @@
                 <div class="notifyerr">
                     <span ng-show="auth.error.logout">
                         <span ng-show="auth.logoutFailed.current == auth.logoutFailed.SIGNOUT">SIGN OUT automatically</span>
-                        <span ng-show="auth.logoutFailed.current > 0 && auth.logoutFailed.current < auth.logoutFailed.SIGNOUT">LOG OUT {{auth.logoutFailed.current}} failed</span>
+                        <span ng-show="auth.logoutFailed.current == 1">PASSWORD incorrect</span>
+                        <span ng-show="auth.logoutFailed.current > 1 && auth.logoutFailed.current < auth.logoutFailed.SIGNOUT">PASSWORD incorrect ({{auth.logoutFailed.current}})</span>
                     </span>
                 </div>
                 <input auth-logout-input formpasswd name="passwordLogout" class="passwd" type="password" placeholder="password" ng-model="auth.passwordLogout" required />
