@@ -114,7 +114,10 @@ gulp.task('build', ['html', 'browserify'], function() {
 gulp.task("default", ["html", "compass", "css", "browserify", "ngdocs"], function() {
   browserSync.init(["build/**/**.**"], {
     server: "build/",
-    //https: true,
+    https: {
+        key: "tls/localhost.key",
+        cert: "tls/localhost.crt"
+    },
     middleware: modRewrite([
         '!\\.\\w+$ /index.html [L]'
     ]),
